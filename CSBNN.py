@@ -1,5 +1,7 @@
 import random
 import time
+import zlib
+import base64 as b64
 import csbTrain as ct
 #import NeuralNetwork as nn
 
@@ -205,7 +207,7 @@ class Neural_Network():
 #
 num_inputs = 8
 num_outputs = 2
-hidden_layer_sizes = [64, 64, 64, 16, 8]
+hidden_layer_sizes = [64, 64, 50, 16, 8]
 num_training_iterations = 100000
 learning_rate = .1
 
@@ -229,7 +231,7 @@ start_time = time.perf_counter()
 err = nn.train_in_batches(training_data, 10, num_training_iterations, learning_rate)
 print("Training took: ", time.perf_counter() - start_time)
 print("Error: ", str(err))
-
+print(zlib.compress(nn.pickle()))
 #
 # Print answer
 #
