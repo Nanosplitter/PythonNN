@@ -33,6 +33,6 @@ def readFile(num):
         data.append(tuple((x, y)))
     return data
 
-#print(readFile(500))
+print(readFile(500))
 
     
